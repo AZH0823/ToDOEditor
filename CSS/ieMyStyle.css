@@ -1,0 +1,177 @@
+@import url('cssRest.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    min-height: 100vh;
+    background-color: #E3F2FD;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.editor{
+    width: 850px;
+    padding: 30px 30px;
+    box-sizing: border-box;
+    
+    border-radius:20px;
+    background-color: white;
+    box-shadow:5px 5px 10px rgba(0, 0, 0, 0.545); 
+}
+.editor.disable :where(.control-panel,.reset-filter,.save-img){
+    opacity: 0.4;
+    pointer-events: none;
+}
+.editor h1{
+    font-size: 22px;
+    font-weight: 500;
+}
+.editor h3{
+    font-size: 16px;
+    font-weight: 600;
+}
+.editor-wrapper{
+    display: flex;
+    margin: 20px 0;
+    gap: 30px;
+}
+
+/* 左邊功能區 */
+.control-panel{
+    flex-basis: 280px;
+    flex-shrink: 0;
+    padding: 20px;
+
+    display: flex;  
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.control-panel .title{
+    margin: 15px 25px;
+    width: 100%;
+}
+
+.filter,.icons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.control-panel button{
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 5px 10px;
+    background-color: white;
+    color:#ccc;
+    border: 1px solid #ccc;
+
+    box-sizing: border-box;
+}
+.filter-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 25px;
+}
+.filter-info  .value{
+    margin:0px
+}
+#filter-slider{
+    width: 90%;
+}
+.control-panel button.active,
+.icons button.active{
+    color:white;
+    background-color: #5372F0;
+    border-color: #5372F0;
+}
+
+.icons button.active i{
+    color:white;
+}
+.icons i {
+    color:rgb(108,117,125);
+}
+/* 右邊Preview區 */
+.preview-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #F2F2F2;
+    flex-grow:1;
+    border-radius: 5px;
+
+    overflow: hidden;
+}
+
+.preview-img img{
+    max-width: 100%;
+}
+
+
+
+/* 下面案扭曲 */
+.control-btns{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.control-btns > *{
+    margin: 0 12px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(52, 52, 52, 0.436);
+
+    font-size: 14px;
+    transition: .5s all;
+}
+.reset-filter:hover,.choose-img:hover,.save-img:hover{
+    transform: scale(1.15);
+}
+.control-btns .reset-filter{
+    margin-right: auto;
+}
+
+.reset-filter{
+    background-color: white;
+    border: 1px solid black;
+}
+
+.choose-img{
+    background-color: #6C757D;
+    color: white;
+    border: none;
+}
+
+.save-img{
+    background-color: #5372F0;
+    color: white;
+    border: none;
+}
+
+@media screen and (max-width:760px) {
+    .editor{
+
+    }
+    .editor-wrapper{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .editor{
+        width: 80%;
+    }
+    .control-btns{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .control-btns > *{
+        width: 100%;
+        margin: 0;
+    }
+}
